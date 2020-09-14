@@ -2,7 +2,7 @@ import React from 'react';
 
 import TodoItem from './TodoItem';
 
-function TodoList({ todos, deleteTodo }) {
+function TodoList({ todos, deleteTodo, toggleEdit }) {
 
     return (
         <section className="App_todo_list">
@@ -10,7 +10,7 @@ function TodoList({ todos, deleteTodo }) {
                 <div>No Todos To Display</div>
             ) : todos.map(function (todo) {
                 return (
-                    <TodoItem deleteTodo={deleteTodo} key={todo.id} todo={todo} />
+                    <TodoItem deleteTodo={deleteTodo} key={todo.id} todo={todo} toggleEdit={toggleEdit} />
                 );
             })}
         </section>

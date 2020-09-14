@@ -2,11 +2,11 @@ import React from 'react';
 
 import withForm from '../hoc/withForm';
 
-function TodoForm({ createTodo, reset, change, input_meta, state }) {
+function TodoEdit({ editTodo, reset, change, state, input_meta }) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        createTodo(state);
+        editTodo(state);
         reset();
     }
 
@@ -25,8 +25,9 @@ function TodoForm({ createTodo, reset, change, input_meta, state }) {
             </form>
         </section>
     );
+
 }
 
 
 
-export default withForm(TodoForm);
+export default withForm(TodoEdit);

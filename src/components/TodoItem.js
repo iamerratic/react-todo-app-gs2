@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-function TodoItem({ todo: { title, description, time, id }, deleteTodo }) {
+function TodoItem({ todo: { title, description, time, id }, deleteTodo, toggleEdit }) {
 
     return (
         <div className="App_todo_list_item">
@@ -12,7 +12,9 @@ function TodoItem({ todo: { title, description, time, id }, deleteTodo }) {
             <button onClick={function () {
                 deleteTodo(id);
             }}>Delete</button>
-            <button>Edit</button>
+            <button onClick={function () {
+                toggleEdit(id);
+            }}>Edit</button>
         </div>
     );
 }
